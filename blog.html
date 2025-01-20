@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой Блог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+    <!-- Кнопка -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="dropdown-menu" id="menu">
+        <div class="slider-container">
+            <div class="slider" id="themeSlider" onclick="toggleTheme()" data-theme="dark">
+                <div class="slider-circle"></div>
+            </div>
+
+        </div>
+        <a href="index.html">На главную</a>
+    </div>
+
+    <div class="container">
+        <div class="avatar-container">
+            <img id="avatar" src="жабки.png" alt="Аватарка">
+            <p id="description">Описание вашего блога...</p>
+        </div>
+
+          <!-- Виджеты постов -->
+          <div class="post">
+            <div class="post-title">Первый пост</div>
+            <div class="post-content">
+                Это пример текста первого поста. Здесь можно вставить описание, мысли, и так далее.
+            </div>
+            <div class="post-date">20 января 2025</div>
+        </div>
+
+        <div class="post">
+            <div class="post-title">Второй пост</div>
+            <div class="post-content">
+                Текст второго поста. Здесь можно вставить описание, мысли, и так далее.
+            </div>
+            <div class="post-date">21 января 2025</div>
+        </div>
+
+        <div class="post">
+            <div class="post-title">Третий пост</div>
+            <div class="post-content">
+                Текст третьего поста. Здесь можно вставить описание, мысли, и так далее.
+            </div>
+            <div class="post-date">22 января 2025</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
