@@ -22,7 +22,7 @@
             </div>
 
         </div>
-        <a href="index.html">На главную</a>
+        <a href="visitka.html">На главную</a>
     </div>
 
     <div class="container">
@@ -31,29 +31,39 @@
             <p id="description">Описание вашего блога...</p>
         </div>
 
-          <!-- Виджеты постов -->
-          <div class="post">
+         <!-- Посты -->
+         <div class="post" data-index="0" onclick="openModal(0)">
             <div class="post-title">Первый пост</div>
-            <div class="post-content">
+            <div class="post-content" style="display: none;">
                 Это пример текста первого поста. Здесь можно вставить описание, мысли, и так далее.
             </div>
-            <div class="post-date">20 января 2025</div>
+            <div class="post-date" style="display: none;">20 января 2025</div>
         </div>
 
-        <div class="post">
+        <div class="post" data-index="1" onclick="openModal(1)">
             <div class="post-title">Второй пост</div>
-            <div class="post-content">
+            <div class="post-content" style="display: none;">
                 Текст второго поста. Здесь можно вставить описание, мысли, и так далее.
             </div>
-            <div class="post-date">21 января 2025</div>
+            <div class="post-date" style="display: none;">21 января 2025</div>
         </div>
 
-        <div class="post">
+        <div class="post" data-index="2" onclick="openModal(2)">
             <div class="post-title">Третий пост</div>
-            <div class="post-content">
+            <div class="post-content" style="display: none;">
                 Текст третьего поста. Здесь можно вставить описание, мысли, и так далее.
             </div>
-            <div class="post-date">22 января 2025</div>
+            <div class="post-date" style="display: none;">22 января 2025</div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-post-title" id="modalPostTitle"></div>
+            <div class="modal-post-content" id="modalPostContent"></div>
+            <div class="modal-post-date" id="modalPostDate"></div>
         </div>
     </div>
 
