@@ -132,10 +132,6 @@ body {
     transition: background-color var(--transition-duration);
 }
 
-.dropdown-menu a:hover {
-    background: var(--button-hover);
-}
-
 .slider-container {
     display: flex;
     justify-content: center;
@@ -245,4 +241,16 @@ body {
 /* Убираем ползунок копирования при наведении */
 .post-title, .post-content, .post-date {
     user-select: none; /* Запрещаем выделение текста */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .post-title {
+        font-size: 20px;
+    }
+    .post-content {
+        font-size: 14px;
+    }
 }
