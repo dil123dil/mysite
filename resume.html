@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Простой Блог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+    <!-- Кнопка меню -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Выпадающее меню -->
+    <div class="dropdown-menu" id="menu">
+        <div class="slider-container">
+            <div class="slider" id="themeSlider" onclick="toggleTheme()" data-theme="dark">
+                <div class="slider-circle"></div>
+            </div>
+        </div>
+        <a href="index.html">На главную</a>
+        <a href="blog.html">Блог</a>
+        <a href="about.html">Обо мне</a>
+        <a href="resume.html">Резюме</a> <!-- Новый пункт -->
+        <a href="rules.docx" target="_blank">Правила</a>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <div class="avatar-container">
+            <h1>Еще не готово</h1>
+        </div>
+
+
+    <!-- Уведомление о правилах -->
+    <div id="rules-notice" class="rules-notice">
+        <span>Посещая этот сайт, вы соглашаетесь с <a href="rules.docx" target="_blank">правилами</a>.</span>
+        <button id="close-notice" onclick="closeNotice()">✕</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function closeNotice() {
+            document.getElementById('rules-notice').style.display = 'none';
+        }
+        setTimeout(() => {
+            closeNotice();
+        }, 10000);
+        window.onload = function() {
+            document.getElementById('rules-notice').style.display = 'block';
+            applySystemTheme();
+        };
+    </script>
+</body>
+</html>
