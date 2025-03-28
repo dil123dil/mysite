@@ -1,5 +1,4 @@
 /* style.css */
-/* Основные переменные для светлой и темной темы */
 :root {
     --background-color: #f9f9f9;
     --text-color: #333;
@@ -7,7 +6,161 @@
     --button-color: #5cb85c;
     --button-hover: #4cae4c;
     --post-border: #ddd;
-    --transition-duration: 0.3s; /* Добавим переменную для длительности анимации */
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --card-background: #1e1e1e;
+    --button-color: #6abf69;
+    --button-hover: #5eac5e;
+    --post-border: #555;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--post-border);
+    position: relative;
+}
+
+.post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.post-content {
+    font-size: 16px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+.dropdown a:hover {
+    background: var(--button-hover);
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background: var(--card-background);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: left;
+    width: 200px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: var(--button-hover);
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.slider {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: #ccc;
+    cursor: pointer;
+    border: none;
+}
+
+.slider .slider-circle {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.slider[data-theme="dark"] {
+    background-color: #333;
+}
+
+.slider[data-theme="dark"] .slider-circle {
+    left: 30px;
+}
+
+#postContent {
+    width: 100%;
+    height: 100px;
+}
+
+/* Переменные для светлой и темной темы */
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --card-background: #fff;
+    --button-color: #5cb85c;
+    --button-hover: #4cae4c;
+    --post-border: #ddd;
 }
 
 [data-theme="dark"] {
@@ -26,7 +179,80 @@ body {
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color var(--transition-duration), color var(--transition-duration); /* Плавное переключение темы */
+}
+
+.container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для адаптивности */
+.avatar-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid var(--post-border);
+    word-wrap: break-word;
+}
+
+/* Тема переключателя */
+.slider {
+    width: 50px;
+    height: 25px;
+    background-color: var(--button-color);
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.slider-circle {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.slider[data-theme="dark"] {
+    background-color: var(--button-hover);
+}
+
+.slider[data-theme="dark"] .slider-circle {
+    left: 30px;
+}
+
+.post-image {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.post-video {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .container {
@@ -36,7 +262,6 @@ body {
     background: var(--card-background);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color var(--transition-duration); /* Плавное переключение темы */
 }
 
 .avatar-container {
@@ -50,7 +275,6 @@ body {
     border-radius: 50%;
 }
 
-/* Стили для постов */
 .post {
     margin-bottom: 20px;
     padding: 20px;
@@ -59,13 +283,6 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--post-border);
     position: relative;
-    cursor: pointer;
-    transition: transform var(--transition-duration), box-shadow var(--transition-duration); /* Анимация при наведении */
-}
-
-.post:hover {
-    transform: translateY(-5px); /* Поднимаем пост при наведении */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Увеличиваем тень */
 }
 
 .post-title {
@@ -80,177 +297,64 @@ body {
     word-wrap: break-word;
 }
 
+.post-image {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.post-video {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
 .post-date {
     font-size: 14px;
     margin-top: 10px;
     color: var(--text-color);
 }
 
-/* Меню и переключатель темы */
-.menu-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 100;
-}
-
-.menu-toggle div {
-    width: 30px;
-    height: 4px;
-    background-color: var(--text-color);
-    margin: 5px 0;
-    transition: background-color var(--transition-duration); /* Плавное изменение цвета */
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background: var(--card-background);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    text-align: left;
-    width: 200px;
-    opacity: 0; /* Начальная прозрачность для анимации */
-    transform: translateY(-10px); /* Начальное смещение для анимации */
-    transition: opacity var(--transition-duration), transform var(--transition-duration); /* Плавное появление */
-}
-
-.dropdown-menu.active {
-    display: block;
-    opacity: 1; /* Полная видимость */
-    transform: translateY(0); /* Возвращаем на место */
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: background-color var(--transition-duration);
-}
-
-.slider-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.slider {
-    position: relative;
-    width: 50px;
-    height: 25px;
-    border-radius: 50px;
-    background-color: #ccc;
-    cursor: pointer;
-    border: none;
-    transition: background-color var(--transition-duration); /* Плавное изменение цвета */
-}
-
-.slider .slider-circle {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: left var(--transition-duration); /* Плавное перемещение круга */
-}
-
-.slider[data-theme="dark"] {
-    background-color: #333;
-}
-
-.slider[data-theme="dark"] .slider-circle {
-    left: 30px;
-}
-
-/* Стили для модального окна */
-.modal {
-    display: none;
+/* Стили для уведомления о правилах */
+.rules-notice {
     position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0; /* Начальная прозрачность для анимации */
-    transition: opacity var(--transition-duration); /* Плавное появление */
-}
-
-.modal.active {
-    display: block;
-    opacity: 1; /* Полная видимость */
-}
-
-.modal-content {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--card-background);
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    position: relative;
-    transform: translateY(-20px); /* Начальное смещение для анимации */
-    transition: transform var(--transition-duration); /* Плавное появление */
-}
-
-.modal.active .modal-content {
-    transform: translateY(0); /* Возвращаем на место */
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
     color: var(--text-color);
-    transition: color var(--transition-duration); /* Плавное изменение цвета */
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+    font-size: 16px;
+    max-width: 90%;
+    text-align: center;
 }
 
-.close:hover {
+.rules-notice a {
+    color: var(--button-color);
+    text-decoration: underline;
+}
+
+.rules-notice a:hover {
     color: var(--button-hover);
 }
 
-.modal-post-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.modal-post-content {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.modal-post-date {
-    font-size: 14px;
+#close-notice {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
     color: var(--text-color);
-    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
 }
 
-/* Убираем ползунок копирования при наведении */
-.post-title, .post-content, .post-date {
-    user-select: none; /* Запрещаем выделение текста */
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-    .post-title {
-        font-size: 20px;
-    }
-    .post-content {
-        font-size: 14px;
-    }
+#close-notice:hover {
+    color: var(--button-hover);
 }
