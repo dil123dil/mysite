@@ -20,9 +20,11 @@
             <div class="slider" id="themeSlider" onclick="toggleTheme()" data-theme="dark">
                 <div class="slider-circle"></div>
             </div>
-
         </div>
         <a href="index.html">На главную</a>
+        <a href="about.html">Обо мне</a>
+        <a href="resume.html">Резюме</a>
+        <a href="rules.docx" target="_blank">Правила</a>
     </div>
 
     <div class="container">
@@ -31,43 +33,56 @@
             <p id="description">Описание вашего блога...</p>
         </div>
 
-         <!-- Посты -->
-         <div class="post" data-index="0" onclick="openModal(0)">
+        <!-- Виджеты постов -->
+        <div class="post">
             <div class="post-title">Первый пост</div>
-            <div class="post-content" style="display: none;">
+            <div class="post-content">
                 Это пример текста первого поста. Здесь можно вставить описание, мысли, и так далее.
             </div>
-            <div class="post-date" style="display: none;">20 января 2025</div>
+            <div class="post-date">20 января 2025</div>
         </div>
 
-        <div class="post" data-index="1" onclick="openModal(1)">
+        <div class="post">
             <div class="post-title">Второй пост</div>
-            <div class="post-content" style="display: none;">
+            <div class="post-content">
                 Текст второго поста. Здесь можно вставить описание, мысли, и так далее.
             </div>
-            <div class="post-date" style="display: none;">21 января 2025</div>
+            <div class="post-date">21 января 2025</div>
         </div>
 
-        <div class="post" data-index="2" onclick="openModal(2)">
+        <div class="post">
             <div class="post-title">Третий пост</div>
-            <div class="post-content" style="display: none;">
+            <div class="post-content">
                 Текст третьего поста. Здесь можно вставить описание, мысли, и так далее.
             </div>
-            <div class="post-date" style="display: none;">22 января 2025</div>
+            <div class="post-date">22 января 2025</div>
         </div>
     </div>
 
-    <!-- Модальное окно -->
-    <div id="postModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="modal-post-title" id="modalPostTitle"></div>
-            <div class="modal-post-content" id="modalPostContent"></div>
-            <div class="modal-post-date" id="modalPostDate"></div>
-        </div>
+    <!-- Уведомление о правилах -->
+    <div id="rules-notice" class="rules-notice">
+        <span>Посещая этот сайт, вы соглашаетесь с <a href="rules.docx" target="_blank">правилами</a>.</span>
+        <button id="close-notice" onclick="closeNotice()">✕</button>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Функция для закрытия уведомления
+        function closeNotice() {
+            document.getElementById('rules-notice').style.display = 'none';
+        }
 
+        // Автоматическое скрытие через 10 секунд
+        setTimeout(() => {
+            closeNotice();
+        }, 10000);
+
+        // Показ уведомления при каждом заходе
+        window.onload = function() {
+            document.getElementById('rules-notice').style.display = 'block';
+        };
+    </script>
+
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9277d99fdd3c458d',t:'MTc0MzE3MjQ4NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
